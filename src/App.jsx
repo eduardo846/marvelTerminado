@@ -10,7 +10,10 @@ import useFetch from "./hooks/useFetch";
 
 function App() {
   const exampleApi = useFetch(
-    'https://gateway.marvel.com/v1/public/comics?ts=1&apikey=e8e0bd465abc68a31b67aa2827c20d8f&hash=c92df57ee93a3259c9f50ae019e2caad'
+    `${import.meta.env.VITE_REACT_APP_URL_BASE}/comics?ts=1&apikey=${
+      import.meta.env.VITE_REACT_APP_API_KEY_MARVEL
+    }&hash=${import.meta.env.VITE_REACT_APP_HASH_ID}`
+    //'https://gateway.marvel.com/v1/public/comics?ts=1&apikey=e8e0bd465abc68a31b67aa2827c20d8f&hash=c92df57ee93a3259c9f50ae019e2caad'
   );
   console.log(exampleApi);
   return (
